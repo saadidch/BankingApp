@@ -26,16 +26,16 @@ public class Admin extends Bank implements Create {
      {
         cnt=0;
       System.out.println("\t\t****** ADMIN MENU ******");
-       System.out.println(" 1 ---- Login ");
-       System.out.println(" 2 ---- Create");
-       System.out.println(" 3 ---- Close Account / Delete ");
-       System.out.println(" 4 ---- Exit ");
+       System.out.println(" 1 - Login ");
+       System.out.println(" 2 - Create");
+       System.out.println(" 3 - Close Account / Delete ");
+       System.out.println(" 4 - Exit ");
        chi =sc.nextInt();
      if(chi==1)
      {
           Scanner bc=new Scanner(System.in);
           for(;;){
-         System.out.println("Enter User Name : ");
+         System.out.println("Enter User Name: ");
          usnr=bc.nextLine();
          boolean flag = Character.isDigit(usnr.charAt(0));
          if(flag==false)
@@ -45,7 +45,7 @@ public class Admin extends Bank implements Create {
          else
          {
          try{
-           throw new MyException("Enter the valid Username");
+           throw new MyException("Enter a valid Username:");
            }catch(MyException e){
                System.out.println(e);
            } 
@@ -62,13 +62,13 @@ public class Admin extends Bank implements Create {
      }
      else{
          try{
-           throw new MyException("Enter the valid PIN(4 Digits)");
+           throw new MyException("Enter a valid PIN(4 Digits)");
            }catch(MyException e){
                System.out.println(e);
            }     
          }
      }catch(Exception e){
-             System.out.println("error");
+             System.out.println("Error!");
              
              }
      }
@@ -84,7 +84,7 @@ public class Admin extends Bank implements Create {
         
             if(cnt==0)
            {
-            System.out.println("INVALID USER NAME OR PIN");
+            System.out.println("INVALID USER NAME OR PIN!");
            }
           }
      else if(chi==2)

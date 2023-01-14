@@ -39,7 +39,7 @@ public class OnlineBanking {
        {
            if(admin.getaid()<1)
            {
-           System.out.println(" Admin ACCOUNT IS NEEDED ! ");
+           System.out.println(" ADMIN ACCOUNT IS NEEDED ! ");
              
            }
            else{
@@ -58,7 +58,7 @@ public class OnlineBanking {
        }
        else if(choice==4)
        {
-        System.out.println(" FEEDBACK --- Message To The Bank ");
+        System.out.println(" FEEDBACK:  ");
         n=admin.getfid();
         fb[n] = new Feedback();
         fb=feedbk.feedmenu(fb);
@@ -70,7 +70,7 @@ public class OnlineBanking {
        }
        else
        {
-         System.out.println(" INVALID ENTRY "); 
+         System.out.println(" INVALID ENTRY! ");
        }
        
        }

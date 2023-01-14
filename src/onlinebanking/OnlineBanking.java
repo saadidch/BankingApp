@@ -20,11 +20,11 @@ public class OnlineBanking {
        for(;;)
        {
            System.out.println("\t\t\t****** MAIN MENU ******");
-       System.out.println(" 1 ---- Admin ");
-       System.out.println(" 2 ---- Customer ");
-       System.out.println(" 3 ---- Bank Details ");
-       System.out.println(" 4 ---- FeedBack ");
-       System.out.println(" 5 ---- Exit ");
+           System.out.println(" 1 - Admin ");
+           System.out.println(" 2 - Customer ");
+           System.out.println(" 3 - Bank Details ");
+           System.out.println(" 4 - FeedBack ");
+           System.out.println(" 5 - Exit ");
        choice =sc.nextInt();
        
        if(choice==1)

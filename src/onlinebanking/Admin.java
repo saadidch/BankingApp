@@ -98,9 +98,9 @@ public class Admin extends Bank implements Create {
       else if(chi==3)
      {
           Scanner jc=new Scanner(System.in);
-         System.out.println("\t\tREMOVING ACCOUNT ENTER ACCOUNT ID AND PASS");
+         System.out.println("\t\tREMOVING ACCOUNT - ENTER ACCOUNT ID AND PASS");
          for(;;){
-         System.out.println("Enter User Name : ");
+         System.out.println("Enter User Name: ");
         usnr=jc.nextLine();
          boolean flag = Character.isDigit(usnr.charAt(0));
          if(flag==false)
@@ -110,7 +110,7 @@ public class Admin extends Bank implements Create {
          else
          {
          try{
-           throw new MyException("Enter the valid Username");
+           throw new MyException("Enter a valid Username: ");
            }catch(MyException e){
                System.out.println(e);
            } 
@@ -119,7 +119,7 @@ public class Admin extends Bank implements Create {
          
         for(;;){ 
          try{
-             System.out.println("Enter PIN(4 Digits)");
+             System.out.println("Enter PIN(4 Digits):");
          pas =Integer.parseInt(jc.next());
        
       if(pas>=1000 && pas<=9999){
@@ -127,13 +127,13 @@ public class Admin extends Bank implements Create {
      }
      else{
          try{
-           throw new MyException("Enter the valid PIN(4 Digits)");
+           throw new MyException("Enter the valid PIN(4 Digits): ");
            }catch(MyException e){
                System.out.println(e);
            }     
          }
      }catch(Exception e){
-             System.out.println("error");
+             System.out.println("Error: ");
              
              }
      }
@@ -150,7 +150,7 @@ public class Admin extends Bank implements Create {
         
             if(cnt==0)
            {
-            System.out.println("INVALID USER NAME OR PIN");
+            System.out.println("INVALID USER NAME OR PIN!");
            }
      }
      else if(chi==4)
@@ -158,7 +158,7 @@ public class Admin extends Bank implements Create {
          return a_arr;
      }
      else{
-       System.out.println(" INVALID ENTRY ");
+       System.out.println(" INVALID ENTRY! ");
      }
      
      }
@@ -171,11 +171,11 @@ public class Admin extends Bank implements Create {
      for(;;)
      {
       System.out.println("\t\t******ADMIN ("+adm.ad_Name+jaj+") MENU ******");
-       System.out.println(" 1 ---- User Details ");
-       System.out.println(" 2 ---- Customer Details ");
-       System.out.println(" 3 ---- FeedBacks ");
-       System.out.println(" 4 ---- Edit("+adm.ad_Name+"'s)Information ");
-       System.out.println(" 5 ---- Exit ");
+       System.out.println(" 1 - User Details ");
+       System.out.println(" 2 - Customer Details ");
+       System.out.println(" 3 - FeedBacks ");
+       System.out.println(" 4 - Edit("+adm.ad_Name+"'s)Information ");
+       System.out.println(" 5 - Exit ");
        
        chi =sc.nextInt();
      if(chi==1){
@@ -183,7 +183,7 @@ public class Admin extends Bank implements Create {
      }
       else if(chi==2)
      {
-             System.out.println("Customer ID and Names ");
+             System.out.println("Customer ID and Names: ");
             
                    for(int j = 0; j <cu_count; j++){
                    System.out.println(cu[j].id+" : "+cu[j].customer_Name);
@@ -195,7 +195,7 @@ public class Admin extends Bank implements Create {
          {
              int idee=0,indx=0;
              
-          System.out.println("Enter Customer ID (for full Details)");
+          System.out.println("Enter Customer ID (for full Details):");
           idee =sc.nextInt();
                    for(int j = 0; j <cu_count; j++){
                       if(cu[j].id==idee){
@@ -207,7 +207,7 @@ public class Admin extends Bank implements Create {
                    }
                    if(indx>=cu_count)
                    {
-                      System.out.println(" ID not Found ");
+                      System.out.println(" ID not Found: ");
                    }
                    
            
@@ -235,7 +235,7 @@ public class Admin extends Bank implements Create {
          return adm;
      }
      else{
-       System.out.println(" INVALID ENTRY ");
+       System.out.println(" INVALID ENTRY! ");
      }
      
      }
@@ -247,7 +247,7 @@ public class Admin extends Bank implements Create {
        System.out.println("/t/t/t******CREATING CUSTOMER ACCOUNT******");
        for(;;)
        {
-       System.out.println("Enter Full Name : ");
+       System.out.println("Enter Full Name: ");
        ad_Name = sc.nextLine();
        boolean res=ad_Name.matches("[a-z A-Z]+");
        if(res==true){
@@ -255,7 +255,7 @@ public class Admin extends Bank implements Create {
        }
        else{
        try{
-               throw new MyException("Enter the correct Name");   
+               throw new MyException("Enter the correct Name: ");
            }catch(MyException e){
 //               System.out.println("Invalid gender");
                System.out.println(e);
@@ -265,14 +265,14 @@ public class Admin extends Bank implements Create {
 
        id=++Id;
        ad_count=++ad_count;
-       System.out.println("Assigned ID : "+id);
+       System.out.println("Assigned ID: "+id);
        String us;
        boolean dec=false;
        for(;;){
         int cnt=0;
         dec=false;
         for(;;){
-         System.out.println("Enter User Name");
+         System.out.println("Enter User Name:");
         us = sc.nextLine();
          boolean flag = Character.isDigit(us.charAt(0));
          if(flag==false)
@@ -282,7 +282,7 @@ public class Admin extends Bank implements Create {
          else
          {
          try{
-           throw new MyException("Enter the valid Username");
+           throw new MyException("Enter the valid Username:");
            }catch(MyException e){
                System.out.println(e);
            } 
@@ -313,7 +313,7 @@ public class Admin extends Bank implements Create {
                }
        if(cnt==1)
        {
-        System.out.println("User name is already taken");
+        System.out.println("User name is already taken!");
        }
        else{
        usera_name=us;
@@ -322,7 +322,7 @@ public class Admin extends Bank implements Create {
        }
        for(;;){ 
          try{
-             System.out.println("Enter PIN(4 Digits)");
+             System.out.println("Enter PIN(4 Digits): ");
              pass = Integer.parseInt(sc.next()); 
        
       if(pass>=1000 && pass<=9999){
@@ -330,13 +330,13 @@ public class Admin extends Bank implements Create {
      }
      else{
          try{
-           throw new MyException("Enter the valid PIN(4 Digits)");
+           throw new MyException("Enter the valid PIN(4 Digits): ");
            }catch(MyException e){
                System.out.println(e);
            }     
          }
      }catch(Exception e){
-             System.out.println("error");
+             System.out.println("Error!");
              
              }
      }
@@ -347,38 +347,38 @@ public class Admin extends Bank implements Create {
    
     public void User_Details()
     {
-                   System.out.println("******USER DETAILS******");
+                   System.out.println("USER DETAILS: ");
 
-       System.out.println("NAME : "+ad_Name);
-       System.out.println("ID : "+id);
-       System.out.println("USER NAME : "+usera_name);
-       System.out.println("PIN : "+pass);
-       System.out.println("BANK : "+bank_Name);
-       System.out.println("Bank Address : "+bank_Address);
+       System.out.println("NAME: "+ad_Name);
+       System.out.println("ID: "+id);
+       System.out.println("USERNAME: "+usera_name);
+       System.out.println("PIN: "+pass);
+       System.out.println("BANK: "+bank_Name);
+       System.out.println("Bank Address: "+bank_Address);
        System.out.println("Branch Code: "+branch_Code);
 
     }
 
      void customer_Details(Customer c)
     {
-               System.out.println("******USER DETAILS******");
+               System.out.println("USER DETAILS: ");
 
-       System.out.println("NAME : "+c.customer_Name);
-       System.out.println("ID : "+c.id);
-       System.out.println("USER NAME : "+c.userc_name);
-       System.out.println("PIN : "+c.password);
-       System.out.println("GENDER : "+c.gender);
-       System.out.println("AGE : "+c.Age);
-       System.out.println("DOB : "+c.DOB);
-       System.out.println("ADDRESS : "+c.Cus_Address);
-       System.out.println("PHONE NUMBER : "+c.phn_no);
-       System.out.println("CURRENT BALANCE : "+c.amount);
+       System.out.println("NAME: "+c.customer_Name);
+       System.out.println("ID: "+c.id);
+       System.out.println("USERNAME: "+c.userc_name);
+       System.out.println("PIN: "+c.password);
+       System.out.println("GENDER: "+c.gender);
+       System.out.println("AGE: "+c.Age);
+       System.out.println("DOB: "+c.DOB);
+       System.out.println("ADDRESS: "+c.Cus_Address);
+       System.out.println("PHONE NUMBER: "+c.phn_no);
+       System.out.println("CURRENT BALANCE: "+c.amount);
        if(c.Loan==true)
        {
-       System.out.println("LOAN AMOUNT : "+c.Loan_amount);
+       System.out.println("LOAN AMOUNT: "+c.Loan_amount);
        }
-       System.out.println("BANK : "+c.bank_Name);
-       System.out.println("Bank Address : "+c.bank_Address);
+       System.out.println("BANK: "+c.bank_Name);
+       System.out.println("Bank Address: "+c.bank_Address);
        System.out.println("Branch Code: "+c.branch_Code);
 
     }
@@ -389,17 +389,17 @@ public class Admin extends Bank implements Create {
     
          int chi=0;  
          System.out.println("Which information you want to change : ");
-         System.out.println("1 --- Name : ");
-         System.out.println("2 --- User Name : ");
-         System.out.println("3 --- PIN : ");
-         System.out.println("You cannot change your ID : ");
+         System.out.println("1 - Name : ");
+         System.out.println("2 - User Name : ");
+         System.out.println("3 - PIN : ");
+         System.out.println("You cannot change your ID: ");
          chi=sc.nextInt();
          if(chi==1)
          {
-             System.out.println("Previous NAME : "+a.ad_Name);
+             System.out.println("Previous NAME: "+a.ad_Name);
              for(;;)
        {
-       System.out.println("Enter Full Name : ");
+       System.out.println("Enter Full Name: ");
        a.ad_Name = sc.nextLine();
        boolean res=a.ad_Name.matches("[a-z A-Z]+");
        if(res==true){
@@ -407,7 +407,7 @@ public class Admin extends Bank implements Create {
        }
        else{
        try{
-               throw new MyException("Enter the correct Name");   
+               throw new MyException("Enter the correct Name: ");
            }catch(MyException e){
 //               System.out.println("Invalid gender");
                System.out.println(e);
@@ -418,14 +418,14 @@ public class Admin extends Bank implements Create {
          }
          else if(chi==2)
          {
-            System.out.println("Previous USER NAME : "+a.usera_name);
+            System.out.println("Previous USER NAME: "+a.usera_name);
             String us;
             boolean dec=false;
             for(;;){
         int cnt=0;
         dec=false;
         for(;;){
-         System.out.println("Enter user name");
+         System.out.println("Enter user name: ");
          us = sc.nextLine();
          boolean flag = Character.isDigit(us.charAt(0));
          if(flag==false)
@@ -435,7 +435,7 @@ public class Admin extends Bank implements Create {
          else
          {
          try{
-           throw new MyException("Enter the valid Username");
+           throw new MyException("Enter the valid Username: ");
            }catch(MyException e){
                System.out.println(e);
            } 
@@ -463,7 +463,7 @@ public class Admin extends Bank implements Create {
                }
        if(cnt==1)
        {
-        System.out.println("User name is already taken");
+        System.out.println("User name is already taken!");
        }
        else{
        a.usera_name=us;
@@ -474,12 +474,12 @@ public class Admin extends Bank implements Create {
          }
          else if(chi==3)
          {
-             System.out.println("Previous PIN(4 Digits) : "+a.pass);
+             System.out.println("Previous PIN(4 Digits): "+a.pass);
              for(;;){
                  
          try
          {
-             System.out.println("Enter New PIN(4 Digits)");
+             System.out.println("Enter New PIN(4 Digits): ");
              a.pass = Integer.parseInt(sc.next()); 
        
       if(a.pass>=1000 && a.pass<=9999){
@@ -487,13 +487,13 @@ public class Admin extends Bank implements Create {
      }
      else{
          try{
-           throw new MyException("Enter the valid PIN(4 Digits)");
+           throw new MyException("Enter the valid PIN(4 Digits): ");
            }catch(MyException e){
                System.out.println(e);
            }     
          }
      }catch(Exception e){
-             System.out.println("error");
+             System.out.println("Error!");
              
              }
      }
@@ -501,7 +501,7 @@ public class Admin extends Bank implements Create {
          }
          
          else{
-                System.out.println(" INVALID ENTRY ");    
+                System.out.println(" INVALID ENTRY! ");
          }  
      
      }
